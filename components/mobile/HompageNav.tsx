@@ -38,13 +38,15 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
       <nav className={navbar ? 'active' : ''}>
         <div className="hamburger-container">
           <div className="nav-left">
-            <div className="nav-logo">
-              <a href="/">
-                <Logo />
-              </a>
+            <div className="nav-logo pointer">
+              <Link href="/">
+                <span className="pointer">
+                  <Logo />
+                </span>
+              </Link>
             </div>
           </div>
-          <div className="burger-icon" onClick={handleClick}>
+          <div className="burger-icon pointer" onClick={handleClick}>
             <img src="/static/burger-menu.png" />
           </div>
         </div>
@@ -129,6 +131,9 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
                 align-items: center;
                 justify-content: flex-end;
               }
+              .dropdown {
+                display: none;
+              }
             }
             @media only screen and (max-width: 600px) {
               .dropdown {
@@ -138,7 +143,7 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
               nav {
                 width: 110vw;
                 background: white;
-                height: 7.5vh;
+                height: 10vh;
                 display: flex;
                 align-items: center;
                 box-shadow: 0px 2px 5px #e2e2e5;
@@ -166,6 +171,9 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
               }
               ul {
                 display: none;
+              }
+              .pointer {
+                cursor: pointer;
               }
             }
           `}

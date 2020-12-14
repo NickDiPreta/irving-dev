@@ -94,6 +94,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
             position: absolute;
             height: 40vh;
             padding: 0px;
+            margin-left: 8px;
           }
           .footer-links > ul {
             padding-top: 20px;
@@ -113,6 +114,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
             margin: 0px;
           }
           .social-icons {
+            margin-left: -22px;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;

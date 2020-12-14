@@ -20,6 +20,10 @@ export const Subtitle: React.FC<SubtitleProps> = ({ text }) => {
           font-size: 22px;
           line-height: 36px;
         }
+        @media only screen and (max-width: 600px) {
+          p {
+          }
+        }
       `}</style>
     </p>
   )

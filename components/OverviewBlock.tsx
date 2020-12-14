@@ -52,6 +52,7 @@ export const OverviewBlock: React.FC<OverviewBlockProps> = ({
           word-wrap: break-word;
           height: fit-content;
           width: 90%;
+          margin-bottom: 50px;
         }
         @media only screen and (min-width: 600px) and (max-width: 700px) {
           .block-text {
@@ -74,13 +75,15 @@ export const OverviewBlock: React.FC<OverviewBlockProps> = ({
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            margin-bottom: -50px;
           }
           .block-subtext {
             word-wrap: break-word;
-            width: 120%;
+            width: 80vw;
           }
           .mobile-wrapper {
             margin-bottom: -1vh;
+            width: 100vw;
           }
         }
       `}</style>

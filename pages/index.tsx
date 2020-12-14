@@ -13,8 +13,15 @@ import { Footer } from '../components/Footer'
 import { HomepageNav } from '../components/mobile/HompageNav'
 import { Logo } from '../components/Logo'
 import Link from 'next/link'
+import { BlockFourMobile } from '../components/BlockFourMobile'
+import { BlockFourDesktop } from '../components/BlockFourDesktop'
 
 const Home = (): JSX.Element => {
+  useEffect(() => {
+    window.addEventListener('resize', updateMedia)
+    return () => window.removeEventListener('resize', updateMedia)
+  })
+
   const metaTitle = 'Perch Credit'
   const [text, cycleText] = useCycle(
     'Rent',
@@ -27,6 +34,11 @@ const Home = (): JSX.Element => {
   const [show, setShow] = useState(true)
   const [dropdown, setDropdown] = useState(false)
   const [button, setButton] = useState(false)
+  const [isDesktop, setDesktop] = useState(false)
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 600)
+  }
 
   const handleClick = () => {
     setDropdown(!dropdown)
@@ -63,25 +75,27 @@ const Home = (): JSX.Element => {
                   {dropdown ? (
                     <img
                       onClick={handleClick}
-                      className="x-icon"
+                      className="x-icon pointer"
                       src="static/x-mark.svg"
                     />
                   ) : (
-                    <img
-                      onClick={handleClick}
-                      className="burger-icon"
-                      src="static/burger-menu.png"
-                    />
+                    <button>
+                      <img
+                        onClick={handleClick}
+                        className="burger-icon pointer"
+                        src="static/x-mark.svg"
+                      />
+                    </button>
                   )}
                 </div>
 
                 <Link href="/about">
-                  <li>About</li>
+                  <li className="pointer">About</li>
                 </Link>
                 <Link href="faq">
-                  <li>FAQ</li>
+                  <li className="pointer">FAQ</li>
                 </Link>
-                <li className="drop-menu">
+                <li className="drop-menu pointer">
                   <Link href="https://apps.apple.com/us/app/perch-credit/id1516209753">
                     <button>Get Perch</button>
                   </Link>
@@ -151,17 +165,8 @@ const Home = (): JSX.Element => {
                 <img src="/static/Frame.svg" />
               </div>
             </div>
-            <div className="blockFour">
-              <div className="left-three">
-                <StaticText lineOne="Build credit with rent" lineTwo="" />
-                <Subtitle text="Report up to 24 months of past rent payments to instantly increase your score." />
-              </div>
-              <div className="right-three">
-                <img
-                  className="rent-reporting"
-                  src="/static/rent-reporting.gif"
-                />
-              </div>
+            <div className="purp">
+              {isDesktop ? <BlockFourDesktop /> : <BlockFourMobile />}
             </div>
           </div>
           <InvestorsBlock />

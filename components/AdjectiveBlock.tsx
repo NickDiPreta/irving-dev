@@ -3,7 +3,7 @@ import { AdjectiveCard } from './AdjectiveCard'
 
 export const AdjectiveBlock = () => {
   return (
-    <div>
+    <div className="adj-container">
       <AdjectiveCard
         source="/static/adjective-icons/safe.svg"
         title="Safe"
@@ -20,13 +20,25 @@ export const AdjectiveBlock = () => {
         subtitle="We believe credit building shouldn’t cost you."
       />
       <style jsx>{`
-        div {
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          margin-top: 5vh;
+        @media only screen and (max-width: 600px) {
+          .adj-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5vh;
+          }
+        }
+        @media only screen and (min-width: 600px) {
+          .adj-container {
+            height: 30vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 5vh;
+          }
         }
       `}</style>
     </div>

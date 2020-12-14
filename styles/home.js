@@ -6,6 +6,14 @@ export const main = css`
     margin-right: 100px;
     font-family: 'Gilroy-Bold';
   }
+  main ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-top {
+    display: none;
+  }
+
   .ellipse {
     z-index: -100;
   }
@@ -45,6 +53,7 @@ export const main = css`
 
   .right-one {
     width: 30vw;
+    margin-left: 20px;
   }
 
   .left-one {
@@ -57,39 +66,28 @@ export const main = css`
   .left-one > img {
     width: 40%;
   }
+
   .blockThree {
     margin: auto;
     display: flex;
-    height: 697px;
+    height: 550px;
   }
   .left-two {
     height: 520px;
+    margin-left: 10%;
   }
   .right-two {
     display: flex;
-
     flex-direction: column;
     font-family: 'Gilroy-Medium';
     height: 520px;
     font-size: 16px;
     font-weight: 500;
   }
-  .blockFour {
-    width: 100%;
-    display: flex;
-  }
-
-  .left-three {
-    width: 40vw;
-    font-family: 'Gilroy-Medium';
-    height: 520px;
-  }
-  .right-three {
-    width: 40vw;
-  }
 
   .SFF-Block {
-    height: 100vh;
+    height: 450px;
+    padding-top: 50px;
     span {
       font-size: 42px;
       color: #212121;
@@ -97,15 +95,27 @@ export const main = css`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 5vh;
+    margin-top: 15vh;
     align-items: center;
+    background: linear-gradient(
+      180deg,
+      rgba(240, 237, 255, 0.25) 0%,
+      #ffffff 43.23%,
+      #ffffff 100%
+    );
   }
   .button-container {
     display: none;
   }
-  .rent-reporting {
-    margin-top: -200px;
-    margin-left: -200px;
+
+  .options-dropdown {
+    display: none;
+  }
+  .app-store-logo {
+    cursor: pointer;
+  }
+  .rent {
+    border: 1px solid gray;
   }
 
   @media only screen and (max-width: 600px) {
@@ -123,6 +133,7 @@ export const main = css`
       top: 92vh;
       z-index: 1000;
     }
+
     .sticky-button {
       font-family: 'Gilroy-Medium';
       background-color: #907cff;
@@ -136,6 +147,10 @@ export const main = css`
       z-index: 1000;
       font-size: 1.2rem;
       margin-bottom: 5px;
+    }
+
+    .sticky-button :hover {
+      cursor: pointer;
     }
     .title {
       margin: 0;
@@ -164,53 +179,49 @@ export const main = css`
       width: 55%;
     }
     .blockTwo {
-      margin: auto;
-      margin-top: 5vh;
+      margin-top: 15vh;
       width: 100vw;
       height: fit-content;
       flex-direction: column;
-      align-items: center;
+      align-items: left;
+      margin-left: 54px;
       margin-bottom: 4vh;
     }
     .app-store-logo {
       margin: auto;
       text-align: center;
+      cursor: pointer;
     }
 
     .blockThree {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      margin-top: 5vh;
+      margin-top: 10vh;
       width: 95vw;
 
-      align-items: center;
+      align-items: space-evenly;
       justify-content: center;
     }
     .right-two {
       font-family: 'Gilroy-Bold';
-      height: 30vh;
-      transform: scale(0.6);
+      height: 20vh;
       justify-content: flex-start;
       padding-left: 0;
       text-align: center;
       width: 100vw;
+      transform: scale(0.6);
     }
     .left-two {
-      width: 100vw;
       text-align: center;
-    }
-    .left-three {
       transform: scale(0.6);
-      font-family: 'Gilroy-Bold';
-      width: 100%;
-      text-align: center;
-      height: 30vh;
     }
+
     .SFF-Block {
       display: flex;
+      font-family: 'Gilroy-Medium';
       flex-direction: column;
-      margin-top: 66px;
+      padding-top: 66px;
       background: linear-gradient(
         180deg,
         rgba(240, 237, 255, 0.25) 0%,
@@ -220,27 +231,6 @@ export const main = css`
       span {
         font-size: 24px;
       }
-    }
-    .rent-reporting {
-      width: 100vw;
-      text-align: center;
-    }
-    .blockFour {
-      background-color: #f9f8ff;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      margin-top: 5vh;
-      width: 95vw;
-
-      align-items: center;
-      justify-content: center;
-    }
-    .right-three {
-      margin-top: 20vh;
-      margin-left: 50vw;
-    }
-    .left-three {
     }
 
     .dropmenu-home {
@@ -274,9 +264,17 @@ export const main = css`
       margin-right: 5vw;
       height: 0.75em;
     }
+
+    .pointer :hover {
+      cursor: poitner;
+    }
     .nav-top {
       display: flex;
       justify-content: space-between;
+    }
+
+    .nav-top > a:hover {
+      cursor: pointer;
     }
     .drop-menu > button {
       background-color: #907cff;
@@ -296,6 +294,10 @@ export const main = css`
     .x-icon {
       height: 1.8rem;
       margin-right: 5vw;
+    }
+    .pointer :hover {
+      cursor: pointer;
+      z-index: 10000000;
     }
   }
 `

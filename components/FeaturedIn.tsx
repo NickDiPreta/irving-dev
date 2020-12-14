@@ -30,12 +30,11 @@ export const FeaturedIn: React.FC<FeaturedInProps> = ({}) => {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background: #f9f8fc;
-            width: 100vw;
           }
           .break-margin {
+            width: 110vw;
             margin-left: -15vw;
-
+            background: #f9f8fc;
             height: 177px;
           }
           li {
@@ -48,10 +47,10 @@ export const FeaturedIn: React.FC<FeaturedInProps> = ({}) => {
               padding-top: 50px;
               margin-top: 10px;
               height: fit-content;
+              padding-bottom: 50px;
+              padding-right: 50px;
             }
             ul {
-              align-items: center;
-              justify-content: center;
               flex-wrap: wrap;
               flex-direction: row;
               width: 100vw;

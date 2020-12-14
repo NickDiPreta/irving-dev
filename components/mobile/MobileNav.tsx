@@ -105,6 +105,12 @@ export const MobileNav: React.FC<MobileNavProps> = ({}) => {
               font-size: 0.8em;
               width: 60vw;
             }
+            button {
+              cursor: pointer;
+            }
+            img {
+              cursor: pointer;
+            }
           }
         `}
       </style>
