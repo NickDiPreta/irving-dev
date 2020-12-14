@@ -1,0 +1,58 @@
+/* -------------------------------- 
+
+Fonts
+
+-------------------------------- */
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('../public/fonts/Gilroy/Gilroy-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('../public/fonts/Gilroy/Gilroy-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: url('../public/fonts/Gilroy/Gilroy-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------------------------------- 
+    
+    Primary style
+    
+    -------------------------------- */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 80.5%;
+}
+
+.outer-container {
+  margin: -10px;
+  background: url('/static/Ellipse72.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto;
+  background-size: 50%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}

@@ -1,213 +1,179 @@
-import Head from 'next/head'
+import { Header } from '../components/Header'
+import { main } from '../styles/home'
+import RevolvingText from '../components/RevolvingText'
+import { Subtitle } from '../components/Subtitle'
+import { StaticText } from '../components/StaticText'
+import { AnimatePresence, useCycle } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
+import { FeaturedIn } from '../components/FeaturedIn'
+import { OverviewBlock } from '../components/OverviewBlock'
+import { InvestorsBlock } from '../components/InvestorsBlock'
+import { AdjectiveBlock } from '../components/AdjectiveBlock'
+import { Footer } from '../components/Footer'
+import { HomepageNav } from '../components/mobile/HompageNav'
+import { Logo } from '../components/Logo'
+import Link from 'next/link'
 
-export const Home = (): JSX.Element => (
-  <div className="container">
-    <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+const Home = (): JSX.Element => {
+  const metaTitle = 'Perch Credit'
+  const [text, cycleText] = useCycle(
+    'Rent',
+    'Netflix',
+    'Hulu',
+    'Spotify',
+    'Apple Music',
+    'Amazon'
+  )
+  const [show, setShow] = useState(true)
+  const [dropdown, setDropdown] = useState(false)
+  const [button, setButton] = useState(false)
 
-    <main>
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+  const handleClick = () => {
+    setDropdown(!dropdown)
+  }
 
-      <p className="description">
-        Get started by editing <code>pages/index.tsx</code>
-      </p>
+  const handleCycle = () => {
+    cycleText()
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 1500)
+  }
 
-      <button
-        onClick={() => {
-          window.alert('With typescript and Jest')
-        }}
-      >
-        Test Button
-      </button>
+  useEffect(() => {
+    handleCycle()
+  }, [])
 
-      <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+  return (
+    <div>
+      <Header title={metaTitle} />
+      <div className="outer-container">
+        <main>
+          <style jsx>{main}</style>
 
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
+          <HomepageNav handleClick={handleClick} setButton={setButton} />
+          {dropdown ? (
+            <div className="dropmenu-home">
+              <ul className="options-dropdown">
+                <div className="nav-top">
+                  <div className="nav-logo">
+                    <Logo />
+                  </div>
 
-        <a
-          href="https://github.com/vercel/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
+                  {dropdown ? (
+                    <img
+                      onClick={handleClick}
+                      className="x-icon"
+                      src="static/x-mark.svg"
+                    />
+                  ) : (
+                    <img
+                      onClick={handleClick}
+                      className="burger-icon"
+                      src="static/burger-menu.png"
+                    />
+                  )}
+                </div>
 
-        <a
-          href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-        </a>
+                <Link href="/about">
+                  <li>About</li>
+                </Link>
+                <Link href="faq">
+                  <li>FAQ</li>
+                </Link>
+                <li className="drop-menu">
+                  <Link href="https://apps.apple.com/us/app/perch-credit/id1516209753">
+                    <button>Get Perch</button>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            ''
+          )}
+          <div className="blocks">
+            <div className="blockOne">
+              <div className="left-one">
+                <StaticText lineOne="Build credit with" lineTwo="" />
+                <AnimatePresence onExitComplete={() => handleCycle()}>
+                  {show && <RevolvingText text={text} />}
+                </AnimatePresence>
+                <Subtitle text="Use recurring expenses to boost your credit score instantly with Perch." />
+                <Link href="https://apps.apple.com/us/app/perch-credit/id1516209753">
+                  <img
+                    className="app-store-logo"
+                    src="/static/app-store-logo.svg"
+                  />
+                </Link>
+              </div>
+              <div className="right-one">
+                <img src="/static/asset1.png" />
+              </div>
+            </div>
+            {button ? (
+              <div className="button-container">
+                <Link href="https://apps.apple.com/us/app/perch-credit/id1516209753">
+                  <button className="sticky-button">Get Perch</button>
+                </Link>
+              </div>
+            ) : (
+              ''
+            )}
+
+            <div className="blockTwo">
+              <OverviewBlock
+                image="/static/setup-icon.svg"
+                text="Quick & Easy Setup"
+                subtext="Start your credit building journey in as little as 5 minutes"
+              />
+              <OverviewBlock
+                image="/static/credit-icon.svg"
+                text="Automate credit building"
+                subtext="Increase your score month to month without changing your lifestyle"
+              />
+              <OverviewBlock
+                image="/static/secure-icon.svg"
+                text="Keep all your data safe"
+                subtext="We secure all sensitive information using 256-bit encryption"
+              />
+            </div>
+            <FeaturedIn />
+            <div className="blockThree">
+              <div className="right-two">
+                <StaticText
+                  lineOne="Build credit with"
+                  lineTwo="subscriptions"
+                />
+                <Subtitle text="Perch allows you to build your credit using your recurring expenses like Netflix, Hulu, Spotify, and Apple Music." />
+              </div>
+              <div className="left-two">
+                {' '}
+                <img src="/static/Frame.svg" />
+              </div>
+            </div>
+            <div className="blockFour">
+              <div className="left-three">
+                <StaticText lineOne="Build credit with rent" lineTwo="" />
+                <Subtitle text="Report up to 24 months of past rent payments to instantly increase your score." />
+              </div>
+              <div className="right-three">
+                <img
+                  className="rent-reporting"
+                  src="/static/rent-reporting.gif"
+                />
+              </div>
+            </div>
+          </div>
+          <InvestorsBlock />
+          <div className="SFF-Block">
+            <span>Safe. Fast. Free.</span>
+            <AdjectiveBlock />
+          </div>
+          <Footer />
+        </main>
       </div>
-    </main>
-
-    <footer>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-      </a>
-    </footer>
-
-    <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer {
-        width: 100%;
-        height: 100px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .title a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      .title a:hover,
-      .title a:focus,
-      .title a:active {
-        text-decoration: underline;
-      }
-
-      .title {
-        margin: 0;
-        line-height: 1.15;
-        font-size: 4rem;
-      }
-
-      .title,
-      .description {
-        text-align: center;
-      }
-
-      .description {
-        line-height: 1.5;
-        font-size: 1.5rem;
-      }
-
-      code {
-        background: #fafafa;
-        border-radius: 5px;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        max-width: 800px;
-        margin-top: 3rem;
-      }
-
-      .card {
-        margin: 1rem;
-        flex-basis: 45%;
-        padding: 1.5rem;
-        text-align: left;
-        color: inherit;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
-      }
-
-      .card:hover,
-      .card:focus,
-      .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
-      }
-
-      .card h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1.5;
-      }
-
-      .logo {
-        height: 1em;
-      }
-
-      @media (max-width: 600px) {
-        .grid {
-          width: 100%;
-          flex-direction: column;
-        }
-      }
-    `}</style>
-
-    <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    `}</style>
-  </div>
-)
+    </div>
+  )
+}
 
 export default Home
