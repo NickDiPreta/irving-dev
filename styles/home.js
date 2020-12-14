@@ -77,7 +77,6 @@ export const main = css`
   .blockFour {
     width: 100%;
     display: flex;
-    margin-bottom: 90px;
   }
 
   .left-three {

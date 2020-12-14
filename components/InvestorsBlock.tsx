@@ -27,10 +27,13 @@ export const InvestorsBlock: React.FC<InvestorsBlockProps> = ({}) => {
         .investor-head {
           font-size: 28px;
           font-family: 'Gilroy-Medium';
+          text-align: center;
         }
         .investor-body {
           font-family: 'Gilroy-Regular';
           font-size: 16px;
+          text-align: center;
+          margin-top: -15px;
         }
         ul {
           display: flex;
