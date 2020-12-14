@@ -52,13 +52,17 @@ export const Footer: React.FC<FooterProps> = ({}) => {
         .footer-container {
           height: 366px;
           display: flex;
-          justify-content: space-between;
           background: #f9f8ff;
-
           width: 100vw;
+          margin-left: -100px;
           padding-left: 100px;
           padding-right: 100px;
           padding-top: 100px;
+          justify-content: space-between;
+        }
+        .footer-logo {
+          height: 100px;
+          width: 100px;
         }
         ul {
           display: flex;

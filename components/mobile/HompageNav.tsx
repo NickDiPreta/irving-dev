@@ -61,11 +61,6 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
                 <span className="white-link">FAQ</span>
               </Link>
             </li>
-            <li>
-              <Link href="/signup">
-                <button>Get Started</button>
-              </Link>
-            </li>
           </ul>
         </div>
 
@@ -74,32 +69,33 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
             @media only screen and (min-width: 600px) {
               ul {
                 font-size: 0.8em;
-                width: 60vw;
               }
               .burger-icon {
                 display: none;
               }
 
               nav {
-                width: 100vw;
                 margin-top: 1vh;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
-                justify-content: center;
                 font-family: Gilroy-Regular;
                 z-index: 2000;
+                max-width: 100vw;
+
+                flex-wrap: wrap;
+                color: white;
               }
               .nav-left {
                 display: flex;
                 align-items: center;
-                width: 50vw;
+                max-width: 40vw;
                 height: 10vw;
               }
               .nav-right {
-                display: none;
                 font-size: 1.5em;
-                width: 40vw;
+
+                max-width: 30vw;
                 button {
                   font-size: 0.8em;
                   height: 2.4em;

@@ -31,11 +31,11 @@ export const FeaturedIn: React.FC<FeaturedInProps> = ({}) => {
             justify-content: space-around;
             align-items: center;
             background: #f9f8fc;
+            width: 100vw;
           }
           .break-margin {
             margin-left: -15vw;
-            padding-left: 100px;
-            padding-right: 100px;
+
             height: 177px;
           }
           li {

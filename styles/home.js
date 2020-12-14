@@ -37,11 +37,10 @@ export const main = css`
   }
   .blockTwo {
     display: flex;
-    height: 441px;
-    max-width: 100vw;
-    align-items: center;
-    justify-content: space-around;
-    margin-left: 10vw;
+    width: 90vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 10vw;
   }
 
   .right-one {
@@ -68,6 +67,7 @@ export const main = css`
   }
   .right-two {
     display: flex;
+
     flex-direction: column;
     font-family: 'Gilroy-Medium';
     height: 520px;
@@ -81,17 +81,16 @@ export const main = css`
   }
 
   .left-three {
-    width: 50%;
+    width: 40vw;
     font-family: 'Gilroy-Medium';
     height: 520px;
   }
   .right-three {
-    width: 100%;
-    height: fit-content;
+    width: 40vw;
   }
 
   .SFF-Block {
-    height: 598px;
+    height: 100vh;
     span {
       font-size: 42px;
       color: #212121;
@@ -101,6 +100,13 @@ export const main = css`
     justify-content: flex-start;
     margin-top: 5vh;
     align-items: center;
+  }
+  .button-container {
+    display: none;
+  }
+  .rent-reporting {
+    margin-top: -200px;
+    margin-left: -200px;
   }
 
   @media only screen and (max-width: 600px) {
@@ -164,6 +170,7 @@ export const main = css`
       width: 100vw;
       height: fit-content;
       flex-direction: column;
+      align-items: center;
       margin-bottom: 4vh;
     }
     .app-store-logo {
@@ -221,15 +228,20 @@ export const main = css`
     }
     .blockFour {
       background-color: #f9f8ff;
-      margin-top: 5vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      height: 78vh;
+      justify-content: flex-end;
+      margin-top: 5vh;
+      width: 95vw;
+
+      align-items: center;
+      justify-content: center;
     }
     .right-three {
-      height: 40vh;
+      margin-top: 20vh;
+      margin-left: 50vw;
+    }
+    .left-three {
     }
 
     .dropmenu-home {

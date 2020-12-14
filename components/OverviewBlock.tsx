@@ -21,7 +21,10 @@ export const OverviewBlock: React.FC<OverviewBlockProps> = ({
       </div>
       <p className="block-subtext">{subtext}</p>
       <style jsx>{`
-        div {
+        .block-wrapper {
+          max-width: 30%;
+        }
+        .mobile-wrapper {
           height: 304px;
           display: flex;
           flex-direction: column;
@@ -46,12 +49,22 @@ export const OverviewBlock: React.FC<OverviewBlockProps> = ({
           font-family: 'Gilroy-Regular';
           font-size: 16px;
           font-weight: 400;
-          margin-left: 15vw;
           word-wrap: break-word;
+          height: fit-content;
+          width: 90%;
         }
         @media only screen and (min-width: 600px) and (max-width: 700px) {
           .block-text {
             font-size: 1.2em;
+          }
+        }
+        @media only screen and (max-width: 760px) {
+          .block-text {
+            font-size: 14px;
+          }
+          .block-subtext {
+            margin-top: -7vh;
+            font-size: 12px;
           }
         }
 
@@ -64,6 +77,7 @@ export const OverviewBlock: React.FC<OverviewBlockProps> = ({
           }
           .block-subtext {
             word-wrap: break-word;
+            width: 120%;
           }
           .mobile-wrapper {
             margin-bottom: -1vh;
