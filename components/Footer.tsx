@@ -8,7 +8,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <div className="footer-container">
       <div className="footer-logo">
-        <Logo variant="mobile" />
+        <Logo />
       </div>
       <div className="footer-links">
         <ul>

@@ -2,7 +2,7 @@ import React from 'react'
 
 interface LogoProps {}
 
-export const Logo: React.FC<LogoProps> = ({ variant = 'regular' }) => {
+export const Logo: React.FC<LogoProps> = () => {
   return (
     <div>
       <img src="/static/perchlogo.svg" />

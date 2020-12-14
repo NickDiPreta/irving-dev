@@ -20,6 +20,11 @@
       "pre-push": "yarn run type-check"
     }
   },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn format"
+    ]
+  },
   "dependencies": {
     "@typeform/embed": "^0.25.5",
     "@types/typeform__embed": "^0.22.2",

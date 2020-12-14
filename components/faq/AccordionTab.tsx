@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import Chevron from './Chevron'
 
 interface AccordionTabProps {
   title: string

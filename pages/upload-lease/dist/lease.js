@@ -1,7 +1,7 @@
-"use strict";
+'use strict'
 // import { useDropzone } from "react-dropzone";
 // import leaseStyles from "../../styles/upload-lease/lease.module.css";
-exports.__esModule = true;
+exports.__esModule = true
 // const lease = (props) => {
 //   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 //   const files = acceptedFiles.map((file) => (
@@ -39,7 +39,7 @@ exports.__esModule = true;
 //   );
 // };
 var lease = function () {
-    return React.createElement("div", null, "lease upload");
-};
+  return React.createElement('div', null, 'lease upload')
+}
 // export default lease;
-exports["default"] = lease;
+exports['default'] = lease
