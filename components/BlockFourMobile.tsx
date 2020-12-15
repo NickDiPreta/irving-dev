@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react'
 import { StaticText } from './StaticText'
 import { Subtitle } from './Subtitle'

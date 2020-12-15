@@ -209,10 +209,8 @@ export const main = css`
       margin: auto;
     }
     .left-two {
+      margin-left: 30px;
       width: 315px;
-      img {
-        height: 420px;
-      }
     }
 
     .SFF-Block {
@@ -249,18 +247,24 @@ export const main = css`
       box-shadow: 0px 2px 5px #e2e2e5;
     }
     .options-dropdown {
+      margin-top: 40px;
+      margin-left: -7px;
       display: flex;
       flex-direction: column;
       font-size: 18px;
       list-style: none;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-evenly;
       height: 100%;
     }
     .nav-logo {
-      width: 15vw;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      height: 24px;
       text-align: justify;
+      width: 87px;
     }
     .burger-icon {
       margin-top: 1vh;
@@ -288,6 +292,7 @@ export const main = css`
       width: 75%;
       height: 5vh;
       margin: auto;
+      margin-left: 10px;
       margin-bottom: 2vh;
       font-size: 1.5rem;
       font-family: 'Gilroy-Medium';
@@ -296,6 +301,9 @@ export const main = css`
       width: 100vw;
     }
     .x-icon {
+      position: absolute;
+      top: 30px;
+      right: 8px;
       height: 1.8rem;
       margin-right: 5vw;
     }

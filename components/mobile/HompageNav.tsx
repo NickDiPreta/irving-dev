@@ -31,6 +31,9 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
       setButton(false)
     }
     setLastScroll(scrollY)
+    if (scrollY > 1500) {
+      setButton(false)
+    }
   }
 
   return (
@@ -59,7 +62,7 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
               </Link>
             </li>
             <li>
-              <Link href="/faq">
+              <Link href="/frequently-asked-questions">
                 <span className="white-link">FAQ</span>
               </Link>
             </li>
@@ -165,8 +168,9 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
                 color: white;
               }
               .nav-logo {
-                width: 15vw;
-                text-align: justify;
+                position: absolute;
+                left: 30px;
+                top: 30px;
               }
               ul {
                 display: none;

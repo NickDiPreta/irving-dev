@@ -66,9 +66,6 @@ export const AccordionTab: React.FC<AccordionTabProps> = ({ title, text }) => {
         .accordion:hover,
         .active {
           background-color: #ccc;
-          border-top: 2px solid #907cff;
-          border-left: 2px solid #907cff;
-          border-right: 2px solid #907cff;
         }
 
         /* Style the accordion content title */
@@ -95,8 +92,7 @@ export const AccordionTab: React.FC<AccordionTabProps> = ({ title, text }) => {
           background-color: white;
           overflow: auto;
           transition: max-height 0.6s ease;
-          border-right: 2px solid #907cff;
-          border-left: 2px solid #907cff;
+
           border-radius: 5px;
         }
 
@@ -105,7 +101,7 @@ export const AccordionTab: React.FC<AccordionTabProps> = ({ title, text }) => {
           font-family: 'Open Sans', sans-serif;
           font-weight: 400;
           font-size: 14px;
-          border-bottom: 2px solid #907cff;
+
           padding: 18px;
           border-radius: 5px;
         }

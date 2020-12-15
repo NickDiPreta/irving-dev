@@ -5,7 +5,6 @@ import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { MobileNav } from '../components/mobile/MobileNav'
 import { TwoLineHeader } from '../components/shared/TwoLineHeader'
-
 import { main } from '../styles/home'
 
 interface aboutProps {}

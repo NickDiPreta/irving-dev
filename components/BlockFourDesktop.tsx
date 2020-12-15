@@ -26,7 +26,7 @@ export const BlockFourDesktop: React.FC<BlockFourDesktopProps> = ({}) => {
           display: flex;
           background: #f9f8ff;
           align-items: center;
-          justify-content: space-around;
+          justify-content: space-evenly;
           font-family: 'Gilroy-Medium';
           height: 705px;
           margin-right: 100px;

@@ -85,3 +85,6 @@ a {
 li :hover {
   cursor: pointer;
 }
+ul {
+  list-style: none;
+}

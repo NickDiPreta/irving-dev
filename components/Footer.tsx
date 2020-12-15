@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import { Logo } from './Logo'
 
 interface FooterProps {}
 
@@ -19,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
           <Link href="/terms-of-service">
             <span>Terms of Service</span>
           </Link>
-          <Link href="/press">
+          <Link href="/about">
             <span>Press</span>
           </Link>
         </ul>

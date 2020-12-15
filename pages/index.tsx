@@ -1,21 +1,20 @@
-import { Header } from '../components/Header'
-import { main } from '../styles/home'
-import RevolvingText from '../components/RevolvingText'
-import { Subtitle } from '../components/Subtitle'
-import { StaticText } from '../components/StaticText'
 import { AnimatePresence, useCycle } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
-import { FeaturedIn } from '../components/FeaturedIn'
-import { OverviewBlock } from '../components/OverviewBlock'
-import { InvestorsBlock } from '../components/InvestorsBlock'
-import { AdjectiveBlock } from '../components/AdjectiveBlock'
-import { Footer } from '../components/Footer'
-import { HomepageNav } from '../components/mobile/HompageNav'
-import { Logo } from '../components/Logo'
 import Link from 'next/link'
-import { BlockFourMobile } from '../components/BlockFourMobile'
+import React, { useEffect, useState } from 'react'
+import { AdjectiveBlock } from '../components/AdjectiveBlock'
 import { BlockFourDesktop } from '../components/BlockFourDesktop'
+import { BlockFourMobile } from '../components/BlockFourMobile'
+import { FeaturedIn } from '../components/FeaturedIn'
+import { Footer } from '../components/Footer'
+import { Header } from '../components/Header'
 import { HomePageTitle } from '../components/HomePageTitle'
+import { InvestorsBlock } from '../components/InvestorsBlock'
+import { HomepageNav } from '../components/mobile/HompageNav'
+import { OverviewBlock } from '../components/OverviewBlock'
+import RevolvingText from '../components/RevolvingText'
+import { StaticText } from '../components/StaticText'
+import { Subtitle } from '../components/Subtitle'
+import { main } from '../styles/home'
 
 const Home = (): JSX.Element => {
   useEffect(() => {
@@ -61,30 +60,24 @@ const Home = (): JSX.Element => {
         <main>
           <style jsx>{main}</style>
 
-          <HomepageNav handleClick={handleClick} setButton={setButton} />
+          <HomepageNav
+            setButton={setButton}
+            handleClick={handleClick}
+            setButton={setButton}
+          />
           {dropdown ? (
             <div className="dropmenu-home">
               <ul className="options-dropdown">
                 <div className="nav-top">
                   <div className="nav-logo">
-                    <Logo />
+                    <img src="static/perchlogo.svg" />
                   </div>
 
-                  {dropdown ? (
-                    <img
-                      onClick={handleClick}
-                      className="x-icon pointer"
-                      src="static/x-mark.svg"
-                    />
-                  ) : (
-                    <button>
-                      <img
-                        onClick={handleClick}
-                        className="burger-icon pointer"
-                        src="static/x-mark.svg"
-                      />
-                    </button>
-                  )}
+                  <img
+                    onClick={handleClick}
+                    className="x-icon pointer"
+                    src="static/x-mark.svg"
+                  />
                 </div>
 
                 <Link href="/about">

@@ -54,10 +54,13 @@ export const FeaturedIn: React.FC<FeaturedInProps> = ({}) => {
               flex-wrap: wrap;
             }
             li {
+              margin: auto;
+
               list-style: none;
             }
             li > img {
-              height: 19px;
+              height: 13px;
+              flex-basis: 46%;
             }
           }
         `}</style>

@@ -22,7 +22,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({}) => {
             </Link>
           </li>
           <li>
-            <Link href="/faq">
+            <Link href="/frequently-asked-questions">
               <span className="black-link">FAQ</span>
             </Link>
           </li>
