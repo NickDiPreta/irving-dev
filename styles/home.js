@@ -276,6 +276,7 @@ export const main = css`
     .nav-top > a:hover {
       cursor: pointer;
     }
+
     .drop-menu > button {
       background-color: #907cff;
       border: none;

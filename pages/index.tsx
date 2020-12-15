@@ -18,8 +18,9 @@ import { BlockFourDesktop } from '../components/BlockFourDesktop'
 
 const Home = (): JSX.Element => {
   useEffect(() => {
-    window.addEventListener('resize', updateMedia)
-    return () => window.removeEventListener('resize', updateMedia)
+    window.addEventListener('resize', setDesktop(window.innerWidth > 700))
+    return () =>
+      window.removeEventListener('resize', setDesktop(window.innerWidth > 700))
   })
 
   const metaTitle = 'Perch Credit'
@@ -35,10 +36,6 @@ const Home = (): JSX.Element => {
   const [dropdown, setDropdown] = useState(false)
   const [button, setButton] = useState(false)
   const [isDesktop, setDesktop] = useState(false)
-
-  const updateMedia = () => {
-    setDesktop(window.innerWidth > 600)
-  }
 
   const handleClick = () => {
     setDropdown(!dropdown)

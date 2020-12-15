@@ -16,7 +16,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({}) => {
       </div>
       <div className="nav-right">
         <ul>
-          <li>
+          <li className="coolhover">
             <Link href="/about">
               <span className="black-link">About</span>
             </Link>
@@ -26,11 +26,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({}) => {
               <span className="black-link">FAQ</span>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/signup">
               <button>Get Started</button>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <style jsx>

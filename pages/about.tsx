@@ -45,6 +45,7 @@ const about: React.FC<aboutProps> = ({}) => {
       />
       <div className="investor-block-header">Our Investors</div>
       <div className="investor-block-subheader">
+        <br />
         We're backed by some of the world's most notable investors.
       </div>
       <ExpandedInvestorsBlock />
