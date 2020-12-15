@@ -9,8 +9,15 @@ export const BlockFourMobile: React.FC<BlockFourMobileProps> = ({}) => {
     <div className="blockFourMobile">
       <div className="contain">
         <div className="fourVert">
-          <StaticText lineOne="Build credit with rent" lineTwo="" />
-          <Subtitle text="Report up to 24 months of past rent payments to instantly increase your score." />
+          <StaticText
+            align="center"
+            lineOne="Build credit with rent"
+            lineTwo=""
+          />
+          <Subtitle
+            alignment="center"
+            text="Report up to 24 months of past rent payments to instantly increase your score."
+          />
         </div>
 
         <img className="rent" src="/static/rent-reporting.gif" />
@@ -22,27 +29,30 @@ export const BlockFourMobile: React.FC<BlockFourMobileProps> = ({}) => {
             display: flex;
           }
           img {
-            height: 300px;
-            width: 300px;
+            height: 350px;
+            width: 350px;
             margin: auto;
           }
           .fourVert {
-            text-align: center;
-            transform: scale(0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Gilroy-Regular';
+            margin-top: 30px;
           }
           .rent {
-            margin-left: 10vw;
           }
-          .blockFour-mobile {
+          .blockFourMobile {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color: #f9f8ff;
-            padding-bottom: 150px;
           }
           p {
-            text-align: center;
+          }
+          .contain {
+            margin: auto;
           }
         }
       `}</style>

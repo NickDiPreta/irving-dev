@@ -23,14 +23,14 @@ const RevolvingText: React.FC<RevolvingTextProps> = ({ text }) => {
           .homepage-p {
             color: #907cff;
             font-family: 'Gilroy-Bold', sans-serif;
-            font-size: 3.6rem;
-            margin-top: -20px;
-            margin-bottom: -10px;
+            font-size: 42px;
           }
-          @media only screen and (max-width: 767px) {
+          @media only screen and (max-width: 600px) {
             .homepage-p {
-              font-size: 3.2rem;
-              font-family: Gilroy-Bold, sans-serif;
+              margin: 0px;
+              font-size: 24px;
+              line-height: 31px;
+              font-family: 'Gilroy-Bold', sans-serif;
             }
           }
         `}</style>

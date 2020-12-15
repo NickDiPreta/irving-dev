@@ -6,6 +6,7 @@ export const main = css`
     margin-right: 100px;
     font-family: 'Gilroy-Bold';
   }
+
   main ::-webkit-scrollbar {
     display: none;
   }
@@ -40,20 +41,23 @@ export const main = css`
 
   .blockOne {
     display: flex;
-    justify-content: space-around;
     height: 588px;
+    width: 100vw;
+    justify-content: space-between;
   }
   .blockTwo {
+    background-color: white;
     display: flex;
-    width: 90vw;
+    width: 100vw;
+    margin-left: -100px;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: 10vw;
+    height: 441px;
+    padding-left: 100px;
   }
 
   .right-one {
-    width: 30vw;
-    margin-left: 20px;
+    width: 894px;
+    margin-left: 50px;
   }
 
   .left-one {
@@ -68,21 +72,24 @@ export const main = css`
   }
 
   .blockThree {
-    margin: auto;
+    background-color: white;
     display: flex;
-    height: 550px;
+    height: 705px;
+    margin-left: -100px;
+
+    margin-right: -100px;
+    align-items: center;
+    justify-content: space-around;
   }
   .left-two {
-    height: 520px;
-    margin-left: 10%;
-  }
-  .right-two {
     display: flex;
     flex-direction: column;
     font-family: 'Gilroy-Medium';
-    height: 520px;
-    font-size: 16px;
     font-weight: 500;
+    margin-left: 100px;
+  }
+  .right-two {
+    width: 533px;
   }
 
   .SFF-Block {
@@ -95,14 +102,8 @@ export const main = css`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 15vh;
     align-items: center;
-    background: linear-gradient(
-      180deg,
-      rgba(240, 237, 255, 0.25) 0%,
-      #ffffff 43.23%,
-      #ffffff 100%
-    );
+    background: #f9f8ff;
   }
   .button-container {
     display: none;
@@ -141,8 +142,8 @@ export const main = css`
       margin: auto;
       color: white;
       position: fixed;
-      border-radius: 10px;
-      height: 6vh;
+      border-radius: 20px;
+      height: 42px;
       border-style: none;
       z-index: 1000;
       font-size: 1.2rem;
@@ -162,66 +163,66 @@ export const main = css`
     .blockOne {
       diplay: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       height: fit-content;
+      margin-left: 30px;
     }
     .right-one {
       width: 100vw;
+      transform: scale(0.8);
     }
     .left-one {
-      margin-left: -5vw;
-      transform: scale(0.7);
-      width: 100vw;
+      margin-top: 100px;
+      width: 315px;
     }
     .left-one > img {
       margin: 0;
-      width: 55%;
     }
     .blockTwo {
-      margin-top: 15vh;
-      width: 100vw;
       height: fit-content;
       flex-direction: column;
-      align-items: left;
-      margin-left: 54px;
-      margin-bottom: 4vh;
+      justify-content: flex-start;
+      padding-bottom: 60px;
+
+      width: 130vw;
+      margin-top: 85px;
     }
     .app-store-logo {
       margin: auto;
       text-align: center;
       cursor: pointer;
+      height: 40px;
     }
 
     .blockThree {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      margin-top: 10vh;
-      width: 95vw;
+      align-items: center;
+      justify-content: start;
+      height: fit-content;
 
-      align-items: space-evenly;
-      justify-content: center;
+      padding-top: 90px;
     }
     .right-two {
-      font-family: 'Gilroy-Bold';
-      height: 20vh;
-      justify-content: flex-start;
-      padding-left: 0;
-      text-align: center;
-      width: 100vw;
-      transform: scale(0.6);
+      margin-top: -50px;
+      margin: auto;
     }
     .left-two {
-      text-align: center;
-      transform: scale(0.6);
+      width: 315px;
+      img {
+        height: 420px;
+      }
     }
 
     .SFF-Block {
+      width: 100vw;
+      height: fit-content;
+      margin-bottom: 45px;
       display: flex;
       font-family: 'Gilroy-Medium';
       flex-direction: column;
-      padding-top: 66px;
+
       background: linear-gradient(
         180deg,
         rgba(240, 237, 255, 0.25) 0%,
@@ -230,7 +231,9 @@ export const main = css`
       );
       span {
         font-size: 24px;
+        font-weight: 600;
       }
+      margin: auto;
     }
 
     .dropmenu-home {

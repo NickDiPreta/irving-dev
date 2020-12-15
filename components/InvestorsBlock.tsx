@@ -14,7 +14,7 @@ export const InvestorsBlock: React.FC<InvestorsBlockProps> = ({}) => {
           <br />
           <br />
           <span className="see-more">
-            <Link href="/investors">See more </Link>
+            <Link href="/about">See more </Link>
           </span>
         </span>
       </p>
@@ -24,7 +24,7 @@ export const InvestorsBlock: React.FC<InvestorsBlockProps> = ({}) => {
         <InvestorBadge source="/static/investor-icons/softbank.png" />
         <InvestorBadge source="/static/investor-icons/sequoia.png" />
         <InvestorBadge source="/static/investor-icons/paypal.png" />
-        <InvestorBadge source="/static/investor-icons/KleinerPerkins.png" />
+        <InvestorBadge source="/static/investor-icons/mvp_logo.png" />
       </ul>
       <style jsx>{`
         .investor-head {
@@ -50,19 +50,26 @@ export const InvestorsBlock: React.FC<InvestorsBlockProps> = ({}) => {
           display: flex;
           flex-direction: column;
           background-color: white;
-          max-height: 290px;
+          height: 290px;
           margin-top: 40px;
+          margin-left: -100px;
+          width: 100vw;
         }
         .see-more {
           font-family: 'Gilroy-Bold';
           color: black;
         }
         @media only screen and (max-width: 600px) {
+          .investor-head {
+            font-size: 24px;
+          }
           .break-margin {
+            height: 400px;
             margin: auto;
             text-align: center;
             background-color: white;
             margin-top: 60px;
+            padding-bottom: 60px;
           }
           ul {
             display: flex;
@@ -72,8 +79,9 @@ export const InvestorsBlock: React.FC<InvestorsBlockProps> = ({}) => {
           }
 
           .investor-body {
-            width: 80%;
             margin: auto;
+            width: 261px;
+            line-height: 27px;
           }
         }
       `}</style>

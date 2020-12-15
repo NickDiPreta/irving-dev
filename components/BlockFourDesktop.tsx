@@ -9,8 +9,15 @@ export const BlockFourDesktop: React.FC<BlockFourDesktopProps> = ({}) => {
     <div className="DesktopFour">
       <img src="/static/rent-reporting.gif" />
       <div className="localright">
-        <StaticText lineOne="Build credit with rent" lineTwo="" />
-        <Subtitle text="Report up to 24 months of past rent payments to instantly increase your score." />
+        <Subtitle
+          alignment="center"
+          text="Report up to 24 months of past rent payments to instantly increase your score."
+        />
+        <StaticText
+          align="center"
+          lineOne="Build credit with rent"
+          lineTwo=""
+        />
       </div>
 
       <style jsx>{`
@@ -18,29 +25,26 @@ export const BlockFourDesktop: React.FC<BlockFourDesktopProps> = ({}) => {
           padding-top: -5vh;
           display: flex;
           background: #f9f8ff;
-          max-width: 100vw;
-          min-width: 800px;
-          margin-left: -100px;
           align-items: center;
+          justify-content: space-around;
           font-family: 'Gilroy-Medium';
-          margin-right: -25vw;
-          height: 500px;
+          height: 705px;
+          margin-right: 100px;
         }
         img {
-          transform: scale(0.5);
-          float: left;
-          margin-right: -25vw;
-          margin-left: -30vw;
+          height: 300px;
+          width: 300px;
+          background: black;
+          border-radius: 10px;
+          margin-right: 150px;
         }
         .localright {
           display: flex;
-          flex-direction: column;
-          width: 30vw;
-          margin: auto;
+          flex-direction: column-reverse;
+          margin-right: 100px;
         }
         @media only screen and (min-width: 900px) {
           img {
-            margin-left: -15vw;
           }
         }
         @media only screen and (min-width: 1200px) {

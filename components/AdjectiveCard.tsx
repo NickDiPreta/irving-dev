@@ -18,22 +18,25 @@ export const AdjectiveCard: React.FC<AdjectiveCardProps> = ({
       <p>{subtitle}</p>
       <style jsx>{`
         div {
-          margin-top: 1vh;
           display: flex;
           flex-direction: column;
 
-          align-items: center;
-          width: 50%;
-          height: 200px;
+          height: 158px;
+          width: 209px;
           color: #212121;
-          margin-bottom: 2vh;
+          margin-bottom: 40px;
         }
         p {
-          width: 100%;
+          margin: 0px;
+
           text-align: center;
           font-family: 'Gilroy-Regular';
+          line-height: 24px;
+          font-size: 14px;
+          height: 48px;
         }
         .adjective {
+          height: 24px;
           text-align: center;
           font-family: 'Gilroy-Bold';
         }

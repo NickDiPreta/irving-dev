@@ -15,12 +15,13 @@ import { Logo } from '../components/Logo'
 import Link from 'next/link'
 import { BlockFourMobile } from '../components/BlockFourMobile'
 import { BlockFourDesktop } from '../components/BlockFourDesktop'
+import { HomePageTitle } from '../components/HomePageTitle'
 
 const Home = (): JSX.Element => {
   useEffect(() => {
-    window.addEventListener('resize', setDesktop(window.innerWidth > 700))
+    window.addEventListener('resize', setDesktop(window.innerWidth > 600))
     return () =>
-      window.removeEventListener('resize', setDesktop(window.innerWidth > 700))
+      window.removeEventListener('resize', setDesktop(window.innerWidth > 600))
   })
 
   const metaTitle = 'Perch Credit'
@@ -105,11 +106,14 @@ const Home = (): JSX.Element => {
           <div className="blocks">
             <div className="blockOne">
               <div className="left-one">
-                <StaticText lineOne="Build credit with" lineTwo="" />
+                <HomePageTitle />
                 <AnimatePresence onExitComplete={() => handleCycle()}>
                   {show && <RevolvingText text={text} />}
                 </AnimatePresence>
-                <Subtitle text="Use recurring expenses to boost your credit score instantly with Perch." />
+                <Subtitle
+                  alignment="left"
+                  text="Use recurring expenses to boost your credit score instantly with Perch."
+                />
                 <Link href="https://apps.apple.com/us/app/perch-credit/id1516209753">
                   <img
                     className="app-store-logo"
@@ -133,16 +137,22 @@ const Home = (): JSX.Element => {
 
             <div className="blockTwo">
               <OverviewBlock
+                imageHeight={74}
+                imageWidth={60}
                 image="/static/setup-icon.svg"
                 text="Quick & Easy Setup"
                 subtext="Start your credit building journey in as little as 5 minutes"
               />
               <OverviewBlock
+                imageHeight={53}
+                imageWidth={105}
                 image="/static/credit-icon.svg"
                 text="Automate credit building"
                 subtext="Increase your score month to month without changing your lifestyle"
               />
               <OverviewBlock
+                imageHeight={50}
+                imageWidth={69}
                 image="/static/secure-icon.svg"
                 text="Keep all your data safe"
                 subtext="We secure all sensitive information using 256-bit encryption"
@@ -150,25 +160,28 @@ const Home = (): JSX.Element => {
             </div>
             <FeaturedIn />
             <div className="blockThree">
-              <div className="right-two">
+              <div className="left-two">
                 <StaticText
+                  align="center;"
                   lineOne="Build credit with"
                   lineTwo="subscriptions"
                 />
-                <Subtitle text="Perch allows you to build your credit using your recurring expenses like Netflix, Hulu, Spotify, and Apple Music." />
+                <Subtitle
+                  alignment="center"
+                  text="Perch allows you to build your credit using your recurring expenses like Netflix, Hulu, Spotify, and Apple Music."
+                />
               </div>
-              <div className="left-two">
-                {' '}
+              <div className="right-two">
                 <img src="/static/Frame.svg" />
               </div>
             </div>
-            <div className="purp">
-              {isDesktop ? <BlockFourDesktop /> : <BlockFourMobile />}
-            </div>
+
+            {isDesktop ? <BlockFourDesktop /> : <BlockFourMobile />}
           </div>
           <InvestorsBlock />
           <div className="SFF-Block">
             <span>Safe. Fast. Free.</span>
+            <br />
             <AdjectiveBlock />
           </div>
           <Footer />

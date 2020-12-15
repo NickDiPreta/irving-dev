@@ -70,7 +70,6 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
           {`
             @media only screen and (min-width: 600px) {
               ul {
-                font-size: 0.8em;
               }
               .burger-icon {
                 display: none;
@@ -84,24 +83,18 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
                 font-family: Gilroy-Regular;
                 z-index: 2000;
                 max-width: 100vw;
-
                 flex-wrap: wrap;
                 color: white;
+
+                justify-content: space-between;
               }
               .nav-left {
                 display: flex;
                 align-items: center;
-                max-width: 40vw;
                 height: 10vw;
               }
               .nav-right {
-                font-size: 1.5em;
-
-                max-width: 30vw;
-                button {
-                  font-size: 0.8em;
-                  height: 2.4em;
-                }
+                font-size: 16px;
               }
               .nav-logo {
                 width: 15vw;
@@ -110,7 +103,8 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
               li {
                 list-style: none;
                 cursor: pointer;
-                margin-left: 2vw;
+                margin-left: 90px;
+                font-weight: 500;
               }
               button {
                 background-color: #907cff;
@@ -126,10 +120,10 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
               }
 
               ul {
-                width: 50vw;
+                color: white;
                 display: flex;
                 align-items: center;
-                justify-content: flex-end;
+                justify-content: flex-start;
               }
               .dropdown {
                 display: none;
@@ -149,6 +143,10 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
                 box-shadow: 0px 2px 5px #e2e2e5;
                 position: fixed;
                 z-index: 2000;
+                justify-content: space-between;
+              }
+              nav-right {
+                font-size: 16px;
               }
               nav.active {
                 display: none;
@@ -163,6 +161,7 @@ export const HomepageNav: React.FC<MobileNavProps> = ({
               .hamburger {
               }
               .white-link {
+                font-size: 16px;
                 color: white;
               }
               .nav-logo {

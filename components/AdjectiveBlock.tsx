@@ -22,12 +22,12 @@ export const AdjectiveBlock = () => {
       <style jsx>{`
         @media only screen and (max-width: 600px) {
           .adj-container {
-            height: 100vh;
+            height: 691px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 5vh;
+            margin-top: 57px;
           }
         }
         @media only screen and (min-width: 600px) {

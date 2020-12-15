@@ -2,9 +2,10 @@ import React from 'react'
 
 interface SubtitleProps {
   text: string
+  alignment: string
 }
 
-export const Subtitle: React.FC<SubtitleProps> = ({ text }) => {
+export const Subtitle: React.FC<SubtitleProps> = ({ text, alignment }) => {
   return (
     <p>
       {text}
@@ -15,13 +16,18 @@ export const Subtitle: React.FC<SubtitleProps> = ({ text }) => {
           font-weight: normal;
           color: #212121;
           float: left;
-          margin-top: 2rem;
-          margin-bottom: 2rem;
-          font-size: 22px;
-          line-height: 36px;
+
+          font-size: 16px;
+          line-height: 27px;
+          width: 291px;
         }
         @media only screen and (max-width: 600px) {
           p {
+            margin-top: 13px;
+            font-size: 14px;
+            width: 261px;
+            text-align: ${alignment};
+            line-height: 22.4px;
           }
         }
       `}</style>

@@ -8,7 +8,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <div className="footer-container">
       <div className="footer-logo">
-        <Logo />
+        <img src="/static/perchlogo.svg" />
       </div>
       <div className="footer-links">
         <ul>
@@ -50,7 +50,8 @@ export const Footer: React.FC<FooterProps> = ({}) => {
       </div>
       <style jsx>{`
         .footer-container {
-          height: 366px;
+          border-top: 1px solid gray;
+          max-height: 616px;
           display: flex;
           background: #f9f8ff;
           width: 100vw;
@@ -92,23 +93,27 @@ export const Footer: React.FC<FooterProps> = ({}) => {
           .footer-container {
             width: 100%;
             position: absolute;
-            height: 40vh;
             padding: 0px;
             margin-left: 8px;
+            display: flex;
+            flex-direction: column;
           }
           .footer-links > ul {
             padding-top: 20px;
-            height: 20%;
-            font-size: 0.4em;
+            font-size: 13px;
             line-height: 15px;
           }
           .footer-links {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            margin-left: 15px;
           }
           .footer-logo {
-            display: none;
+            height: 15px;
+            width: 54px;
+            margin-left: 55px;
+            margin-top: 71px;
           }
           .footer-links > ul > img {
             margin: 0px;
@@ -119,7 +124,12 @@ export const Footer: React.FC<FooterProps> = ({}) => {
             flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
-            height: fit-content;
+          }
+          ul {
+            height: 129px;
+          }
+          span {
+            margin-top: 15px;
           }
         }
       `}</style>

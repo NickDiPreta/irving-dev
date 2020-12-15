@@ -9,6 +9,8 @@ export const Logo: React.FC<LogoProps> = () => {
 
       <style jsx>{`
         img {
+          height: 24px;
+          width: 87px;
         }
       `}</style>
     </div>
